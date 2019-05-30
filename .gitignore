@@ -21,3 +21,7 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/administrative-division-crawler/.settings
+/administrative-division-crawler/target
+/administrative-division-crawler/.classpath
+/administrative-division-crawler/.project
