@@ -1,4 +1,4 @@
-package com.my.crawler;
+package com.my.crawler.model.util;
 
 import java.io.File;
 import java.io.FileInputStream;
