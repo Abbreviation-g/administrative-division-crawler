@@ -3,6 +3,7 @@ package com.my.crawler.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.my.crawler.service.CountyService;
@@ -14,7 +15,7 @@ public class CountyController {
 	CountyService countyService;
 
 	@GetMapping("/combox")
-	public Object combox(Long pid) {
+	public Object combox(@RequestParam(value = "pid",required = false) Long pid) {
 		return countyService.combox(pid);
 	}
 }

@@ -9,12 +9,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.DefaultApplicationArguments;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
 import com.my.crawler.model.Province;
 import com.my.crawler.model.util.Crawler;
 import com.my.crawler.service.InitDbService;
 
 @SpringBootApplication
+@ServletComponentScan
 public class ServiceMainApplication implements CommandLineRunner {
 	public static void main(String[] args) {
 		SpringApplication.run(ServiceMainApplication.class, args);
