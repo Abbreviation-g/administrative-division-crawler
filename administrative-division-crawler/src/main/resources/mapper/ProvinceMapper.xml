@@ -4,4 +4,8 @@
 	<select id="combox" resultType="java.util.HashMap">
 		SELECT id,province_name AS `name` FROM t_province
 	</select>
+	
+	<select id="count" resultType="Integer">
+		SELECT COUNT(*) FROM t_province;
+	</select>
 </mapper>
