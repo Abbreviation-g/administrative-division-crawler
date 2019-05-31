@@ -1,0 +1,17 @@
+server:
+   port: 8763
+spring:
+   application:
+      name: administrative-division-crawler
+   datasource:
+      url: jdbc:mysql://127.0.0.1:3306/province_city_county?useSSL=true&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true&amp;characterEncoding=utf-8&allowMultiQueries=true
+      username: joshvm_developer
+      password: josh2017
+      driver-class-name: com.mysql.jdbc.Driver
+      schema: classpath:sql/schema.sql
+      data: classpath:sql/data.sql
+      initialization-mode: always
+mybatis:
+   mapperLocations: classpath:mapper/*.xml
+   configuration:
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

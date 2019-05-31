@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.my.crawler.dao.ProvinceMapper">
+<mapper namespace="com.my.crawler.dao.ProvinceDao">
 	<select id="combox" resultType="java.util.HashMap">
 		SELECT id,province_name AS `name` FROM t_province
 	</select>
 	
 	<select id="count" resultType="Integer">
-		SELECT COUNT(*) FROM t_province;
+		SELECT COUNT(*) FROM t_province
 	</select>
+	
+	<insert id="insertBatch" useGeneratedKeys="true" parameterType="com.my.crawler.model.Province"  keyProperty="id">
+		INSERT INTO `t_province`(`province_name`,`division_code`,`abbreviation`) VALUES
+		<foreach collection="list" item="province" separator=",">
+			(
+				#{province.provinceName},
+				#{province.divisionCode},
+				#{province.abbreviation}
+			)
+		</foreach>
+	</insert>
+	
+	<update id="truncateTable">
+		TRUNCATE TABLE `t_province`
+	</update>
 </mapper>
