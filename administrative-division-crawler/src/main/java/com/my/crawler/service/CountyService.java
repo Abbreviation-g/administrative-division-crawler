@@ -1,6 +1,7 @@
 package com.my.crawler.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,5 +17,9 @@ public class CountyService {
 	public void initCounty(List<County> counties) {
 		countyDao.truncateTable();
 		countyDao.insertByBatch(counties);
+	}
+	
+	public List<Map<String, Object>> combox(Long pid) {
+		return countyDao.combox(pid);
 	}
 }

@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.my.crawler.dao.PrefectureDao">
-	<!-- <select id="combox" resultType="java.util.HashMap">
-		SELECT id,province_name AS `name` FROM t_province
+	<select id="combox" resultType="java.util.LinkedHashMap" parameterType="java.lang.Long">
+		SELECT
+		  t.`id`,
+		  t.`prefecture_name` AS `name`
+		FROM
+		  t_prefecture AS t
+		<where>
+			<if test="pid != null">
+				t.`pid` = ${pid}
+			</if>
+		</where>
+		ORDER BY id
 	</select>
 	
 	<select id="count" resultType="Integer">
-		SELECT COUNT(*) FROM t_province
-	</select> -->
+		SELECT COUNT(*) FROM t_prefecture
+	</select>
 	
 	<insert id="insertByBatch" useGeneratedKeys="true" parameterType="com.my.crawler.model.Prefecture"  keyProperty="id">
 		insert into `t_prefecture`(`pid`,`prefecture_name`,`division_code`,`phone_code`) values 
