@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.DefaultApplicationArguments;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
@@ -32,11 +31,10 @@ public class ServiceMainApplication implements CommandLineRunner {
 	private static final String INIT_PROFILES = "init";
 	@Override
 	public void run(String... args) throws Exception {
-		//--spring.profiles.active=test 
+		//--spring.profiles.active=init 
 		// java -jar administrative-division-crawler-0.0.1-SNAPSHOT.jar --spring.profiles.active=init
 		System.out.println("----------------------------------------------------------------");
 		System.out.println(Arrays.toString(args));
-		ApplicationArguments arguments = new DefaultApplicationArguments(args);
 		if(arguments.containsOption(ACTIVE_PROFILES)) {
 			List<String> profiles = arguments.getOptionValues(ACTIVE_PROFILES);
 			if(profiles.contains(INIT_PROFILES)) {
