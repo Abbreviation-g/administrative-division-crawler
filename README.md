@@ -9,7 +9,7 @@
 ## 提供三个combox接口，用于获取省市县三级联动的下拉框数据
 省级下拉框 http://localhost:8763/province/combox \
 地级下拉框 http://localhost:8763/prefecture/combox?pid=3 (当参数为空时返回所有地级行政区) \
-县级下拉框 http://localhost:8763/county/combox?pid=1 (当参数为空时返回所有县级行政区) \
+县级下拉框 http://localhost:8763/county/combox?pid=1 (当参数为空时返回所有县级行政区) 
 
 ## 爬虫方法如下图
 **获取省级行政区数据**
