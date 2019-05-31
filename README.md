@@ -10,3 +10,8 @@
 省级下拉框 http://localhost:8763/province/combox \
 地级下拉框 http://localhost:8763/prefecture/combox?pid=3 (当参数为空时返回所有地级行政区) \
 县级下拉框 http://localhost:8763/county/combox?pid=1 (当参数为空时返回所有地级行政区) \
+
+## 爬虫方法如下图
+![avatar](/log/get_province.png)
+![avatar](/log/get_prefecture.png)
+![avatar](/log/get_county.png)
