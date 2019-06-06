@@ -3,15 +3,21 @@ server:
 spring:
    application:
       name: administrative-division-crawler
+   http:
+      encoding:
+         charset: UTF-8
+         enabled: true
+         force: true
    datasource:
-      url: jdbc:mysql://127.0.0.1:3306/province_city_county?useSSL=true&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true&amp;characterEncoding=utf-8&allowMultiQueries=true
+      url: jdbc:mysql://127.0.0.1:3306/province_city_county?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=true 
       username: joshvm_developer
       password: josh2017
-      driver-class-name: com.mysql.jdbc.Driver
-#      initialization-mode: never
-#      schema: classpath:sql/schema.sql
-#      data: classpath:sql/data.sql
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      #schema: classpath:sql/schema.sql
+      #data: classpath:sql/data.sql
+      #initialization-mode: always
 mybatis:
    mapperLocations: classpath:mapper/*.xml
    configuration:
       log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+      
