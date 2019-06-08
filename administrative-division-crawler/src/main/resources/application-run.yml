@@ -10,8 +10,8 @@ spring:
          force: true
    datasource:
       url: jdbc:mysql://127.0.0.1:3306/province_city_county?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=true 
-      username: joshvm_developer
-      password: josh2017
+      username: root
+      password: password
       driver-class-name: com.mysql.cj.jdbc.Driver
       schema: classpath:sql/schema.sql
       data: classpath:sql/data.sql
